@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('superheroes', function (Blueprint $table) {
             $table->id();
             $table->string('name',100);
-            $table->string('RealName',150);
-            #alter table `superheroes` add constraint `superheroes_genreid_foreign` foreign key (`genreId`) references `genre` (`id`))
+            $table->string('realname',150);
             $table->foreignId('universeId')->constrained('universes');
             $table->foreignId('genreId')->constrained('genre');
-            $table->string('imageUrl');
+            $table->foreignId('genderId')->constrained('gender');
+            $table->string('imageUrl')->nullable;
             $table->timestamps();
         });
     }
