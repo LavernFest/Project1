@@ -15,9 +15,19 @@ return new class extends Migration
             $table->id();
             $table->string('name',100);
             $table->string('realname',150);
-            $table->foreignId('universeId')->constrained('universes');
-            $table->foreignId('genreId')->constrained('genre');
-            $table->foreignId('genderId')->constrained('gender');
+
+            /* $table->unsignedBigInteger('universe_id');
+            $table->unsignedBigInteger('genre_id');
+            $table->unsignedBigInteger('gender_id');
+
+            $table->foreign('universe_id')->references('id')->on('universes');
+            $table->foreignId('genre_id')->references('id')->on('genres');
+            $table->foreignId('gender_id')->references('id')->on('genders'); */
+            //Example $table->foreignId('user_id')->constrained();
+            $table->foreignId('universe_id')->constrained();
+            $table->foreignId('genre_id')->constrained();
+            $table->foreignId('gender_id')->constrained();
+
             $table->string('imageUrl')->nullable;
             $table->timestamps();
         });

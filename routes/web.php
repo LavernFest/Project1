@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Universe;
+use App\Http\Controllers\GenderController;
+
 
 Route::get('/', function () {
     echo 'Hello! First Laravel application!';
@@ -12,7 +14,8 @@ Route::get('/', function () {
     // Universe::all();=> SELECT * FROM universes
 
     dump(Universe::all());
-    dump(Gender::all());
 
     //return view('welcome');
 });
+
+Route::get('/gender',[GenderController::class,'index']);
