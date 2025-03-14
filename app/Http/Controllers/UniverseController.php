@@ -3,25 +3,26 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Gender;
+//Importar modelos que vamos a necesitar
+use App\Models\Universe;
 
-class GenderController extends Controller
+class UniverseController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $genders = Gender::all();
-        return view('genders.index',compact('genders'));
+        $universes = Universe::all();
+        return view('universes.index',compact('universes'));
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new resource. Cargar dependencias entre tablas y luego enviarlas a la vista
      */
     public function create()
     {
-        return view('genders.create');
+        return view('universes.create');
     }
 
     /**
@@ -29,7 +30,8 @@ class GenderController extends Controller
      */
     public function store(Request $request)
     {
-        //NA
+        Universe::create(['unName'=> $request->unName]);
+        return to_route('universes.index');
     }
 
     /**
@@ -37,8 +39,8 @@ class GenderController extends Controller
      */
     public function show(string $id)
     {
-        $genders = Gender::find($id);
-        return view('genders.show',compact('genders'));
+        $universes = Universe::find($id);
+        return view('universes.show',compact('universes'));
     }
 
     /**

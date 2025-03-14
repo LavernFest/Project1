@@ -4,11 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Universe extends Model
+class Genre extends Model
 {
-    protected $table = 'universes';
+    protected $table = 'genres';
 
     protected $fillable = [
-        'unName'
+        'Type'
     ];
 }

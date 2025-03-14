@@ -3,17 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Gender;
+use App\Models\Genre;
 
-class GenderController extends Controller
+class GenreController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $genders = Gender::all();
-        return view('genders.index',compact('genders'));
+        $genres = Genre::all();
+        return view('genres.index',compact('genres'));
     }
 
     /**
@@ -21,7 +21,7 @@ class GenderController extends Controller
      */
     public function create()
     {
-        return view('genders.create');
+        return view('genres.create');
     }
 
     /**
@@ -29,7 +29,8 @@ class GenderController extends Controller
      */
     public function store(Request $request)
     {
-        //NA
+        Genre::create(['Type'=> $request->Type]);
+        return to_route('genres.index');
     }
 
     /**
@@ -37,8 +38,8 @@ class GenderController extends Controller
      */
     public function show(string $id)
     {
-        $genders = Gender::find($id);
-        return view('genders.show',compact('genders'));
+        $genres = Genre::find($id);
+        return view('genres.show',compact('genre'));
     }
 
     /**
