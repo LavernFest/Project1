@@ -35,5 +35,7 @@
         <br><br>
         <input type="submit" value="Create Superhero">
     </form>
+    <br>
+    <button><a href="{{ route('superheroes.index') }}">Return to Index</a></button>
 </body>
 </html>

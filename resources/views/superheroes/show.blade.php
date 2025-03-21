@@ -32,7 +32,7 @@
                 </tr>
         </tbody>
     </table>
-
-    <a href="{{ route('superheroes.index') }}">Back to Index</a>
+    <br>
+    <button><a href="{{ route('superheroes.index') }}">Return to Index</a></button>
 </body>
 </html>

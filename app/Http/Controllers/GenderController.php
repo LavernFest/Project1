@@ -29,7 +29,10 @@ class GenderController extends Controller
      */
     public function store(Request $request)
     {
-        //NA
+        $genders = Gender::create([
+            'type' => $request->type,
+        ]);
+        return to_route('genders.index');
     }
 
     /**
@@ -46,7 +49,8 @@ class GenderController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $genders = Gender::find($id);
+        return view('genders.edit',compact('genders'));
     }
 
     /**
@@ -54,7 +58,11 @@ class GenderController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $genders = Gender::find($id);
+        $genders->update([
+            'type' => $request->type,
+        ]);
+        return to_route('genders.index');
     }
 
     /**
@@ -62,6 +70,8 @@ class GenderController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $genders = Gender::find($id);
+        $genders->delete();
+        return to_route('genders.index');
     }
 }

@@ -24,9 +24,12 @@ return new class extends Migration
             $table->foreignId('genre_id')->references('id')->on('genres');
             $table->foreignId('gender_id')->references('id')->on('genders'); */
             //Example $table->foreignId('user_id')->constrained();
-            $table->foreignId('universe_id')->constrained();
-            $table->foreignId('genre_id')->constrained();
-            $table->foreignId('gender_id')->constrained();
+            $table->foreignId('universe_id')->constrained()->onUpdate('cascade')
+            ->onDelete('cascade');
+            $table->foreignId('genre_id')->constrained()->onUpdate('cascade')
+            ->onDelete('cascade');
+            $table->foreignId('gender_id')->constrained()->onUpdate('cascade')
+            ->onDelete('cascade');
 
             $table->string('imageUrl')->nullable;
             $table->timestamps();

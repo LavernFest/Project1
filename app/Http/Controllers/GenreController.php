@@ -39,7 +39,7 @@ class GenreController extends Controller
     public function show(string $id)
     {
         $genres = Genre::find($id);
-        return view('genres.show',compact('genre'));
+        return view('genres.show',compact('genres'));
     }
 
     /**
@@ -47,7 +47,8 @@ class GenreController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $genres = Genre::find($id);
+        return view('genres.edit',compact('genres'));
     }
 
     /**
@@ -55,7 +56,11 @@ class GenreController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $genres = Genre::find($id);
+        $genres->update([
+            'Type' => $request->Type,
+        ]);
+        return to_route('genres.index');
     }
 
     /**
@@ -63,6 +68,8 @@ class GenreController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $genres = Genre::find($id);
+        $genres->delete();
+        return to_route('genres.index');
     }
 }
