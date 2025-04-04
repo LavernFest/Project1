@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Superheroes</title>
-</head>
-<body>
+@extends('layouts.main')
+
+@section('title', 'Superheroes Edit')
+@section('content')
     <h1>Edit Superheroes</h1>
     <p>Welcome to the Superhero Editor!</p>
     <p>Please enter the updated details for the Superhero:</p>
@@ -50,5 +46,4 @@
     </form>
     <br>
     <button><a href="{{ route('superheroes.index') }}">Return to Index</a></button>
-</body>
-</html>
+@endsection

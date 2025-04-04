@@ -11,4 +11,8 @@ class Universe extends Model
     protected $fillable = [
         'unName'
     ];
+
+    public function superheroe(){
+        return $this->hasMany(Superheroe::class);
+    }
 }

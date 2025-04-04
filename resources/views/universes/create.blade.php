@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Universe</title>
-</head>
-<body>
+@extends('layouts.main')
+
+@section('title', 'Universes Create')
+@section('content')
     <h1>Create Universe</h1>
     <p>Welcome to the Universe Creator!</p>
     <p>Please enter a name for your new universe:</p>
@@ -16,5 +12,4 @@
 
         <input type="submit" value="Create Universe">
     </form>
-</body>
-</html>
+@endsection

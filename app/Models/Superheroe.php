@@ -19,4 +19,17 @@ class Superheroe extends Model
         'gender_id',
         'imageUrl'
     ];
+
+    public function universo(){
+        return $this->belongsTo(Universe::class);
+    }
+
+    public function genero(){
+        return $this->belongsTo(Gender::class);
+    }
+
+    public function generolit(){
+        return $this->belongsTo(Genre::class);
+    }
 }
+

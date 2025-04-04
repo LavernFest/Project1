@@ -11,4 +11,8 @@ class Genre extends Model
     protected $fillable = [
         'Type'
     ];
+
+    public function superheroe(){
+        return $this->hasMany(Superheroe::class);
+    }
 }

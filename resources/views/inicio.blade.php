@@ -1,6 +1,5 @@
 @extends('layouts.main')
 
-@section('title', 'Superheroes')
 @section('content')
 <div class="container">
     <div class="row justify-content-center mb-4">
