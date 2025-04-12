@@ -16,6 +16,7 @@ class SuperheroeController extends Controller
     public function index()
     {
         $superheroes = Superheroe::all();
+        //error_log(print_r($superheroes[0], true));
         return view('superheroes.index',compact('superheroes'));
     }
 

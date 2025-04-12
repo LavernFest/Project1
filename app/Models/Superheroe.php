@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Superheroe extends Model
@@ -20,16 +21,18 @@ class Superheroe extends Model
         'imageUrl'
     ];
 
-    public function universo(){
-        return $this->belongsTo(Universe::class);
+    public function universo() : BelongsTo{
+        return $this->belongsTo(Universe::class, 'universe_id', 'id');
     }
 
-    public function genero(){
-        return $this->belongsTo(Gender::class);
+    /* */
+    public function genero() : BelongsTo{
+        return $this->belongsTo(Gender::class,'gender_id', 'id');
     }
 
-    public function generolit(){
-        return $this->belongsTo(Genre::class);
+    public function generolit() : BelongsTo{
+        return $this->belongsTo(Genre::class, 'genre_id', 'id');
     }
+    /**/
 }
 

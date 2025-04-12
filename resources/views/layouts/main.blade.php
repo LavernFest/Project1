@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>App Name - @yield('title')</title>
 
-    <!-- Scripts -->
-    @vite(['resources/sass/style.scss', 'resources/js/app.js' ])
+    <!-- Scripts vite(['resources/sass/style.scss', 'resources/js/app.js' ]) -->
+    
 </head>
 <body>
 

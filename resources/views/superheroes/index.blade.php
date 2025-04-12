@@ -27,7 +27,7 @@
                 <td>{{ $superheroe ->id }}</td>
                 <td>{{ $superheroe ->name }}</td>
                 <td>{{ $superheroe ->realname }}</td>
-                <td>{{ $superheroe ->universo->name }}</td>
+                <td>{{ $superheroe ->universo -> unName }}</td>
                 <td>{{ $superheroe ->generolit->Type }}</td>
                 <td>{{ $superheroe ->genero->type }}</td>
                 <td>

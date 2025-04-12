@@ -12,7 +12,7 @@ class Genre extends Model
         'Type'
     ];
 
-    public function superheroe(){
+    public function superheroes(){
         return $this->hasMany(Superheroe::class);
     }
 }
