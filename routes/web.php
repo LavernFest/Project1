@@ -9,11 +9,21 @@ use App\Http\Controllers\UniverseController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\SuperheroeController;
 
+use App\Http\Controllers\FileController;
 
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/form', function () {
+    return view('form');
+});
+
+
+Route::post('/upload',[FileController::class,'upload'])->name('upload');
+Route::post('/download',[FileController::class,'download'])->name('download');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
